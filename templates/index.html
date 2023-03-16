@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to TechJira</title>
+    <meta name="google-signin-client_id" content="718039634792-9v2ql0jog1sqoacgujg0cp9luvn5gg1d.apps.googleusercontent.com">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="https://scrumgit.com">Blog</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Welcome to TechJira!</h1>
+    </header>
+    <div class="content">
+      <p>This is the homepage.</p>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
+

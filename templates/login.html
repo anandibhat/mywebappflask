@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome, {{ name }}!</h2>
+<p>Email: {{ email }}</p>
+
+{% if 'google.com' not in email %}
+<!-- Google Sign-In Button -->
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<script>
+function onSignIn(googleUser) {
+  var id_token = googleUser.getAuthResponse().id_token;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/google-signin');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      window.location.href = '/dashboard';
+    }
+  };
+  xhr.send('idtoken=' + id_token);
+}
+</script>
+{% endif %}
+
+{% endblock %}
+
+
